@@ -1,4 +1,4 @@
-{% set version = "0.6.2" %}
+{% set version = "1.0.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/e/earthkit-meteo/earthkit_meteo-{{ version }}.tar.gz
-  sha256: 2823ed56947dd2c9c69aae6fe19153eec393c80392126ab84cc760419d0b952b
+  sha256: e80c6e8d0ca1492d6f9e0c607132ce008c7ebfea3c32d55a00101bdc36ada178
 
 build:
   noarch: python

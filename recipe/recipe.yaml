@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.0.0"
+  version: "1.1.0"
 
 package:
   name: earthkit-meteo
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/e/earthkit-meteo/earthkit_meteo-${{ version }}.tar.gz
-  sha256: e80c6e8d0ca1492d6f9e0c607132ce008c7ebfea3c32d55a00101bdc36ada178
+  sha256: 8be9a2b47391dc4eb35f92e8930654d0c5113bba2f23ae6eb581041376af5d82
 
 build:
   number: 0

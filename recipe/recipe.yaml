@@ -1,8 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.6.2"
-  python_min: "3.11"
+  version: "1.0.0"
 
 package:
   name: earthkit-meteo
@@ -10,29 +9,33 @@ package:
 
 source:
   url: https://pypi.org/packages/source/e/earthkit-meteo/earthkit_meteo-${{ version }}.tar.gz
-  sha256: 2823ed56947dd2c9c69aae6fe19153eec393c80392126ab84cc760419d0b952b
+  sha256: e80c6e8d0ca1492d6f9e0c607132ce008c7ebfea3c32d55a00101bdc36ada178
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - python ${{ python_min }}.*
-    - setuptools >=61
+    - setuptools >=77
     - setuptools-scm >=8
     - wheel
     - pip
   run:
     - python >=${{ python_min }}
-    - earthkit-utils >=0.2,<0.99
+    - deprecation
+    - earthkit-utils ~=1.0
     - numpy
 
 tests:
   - python:
       imports:
         - earthkit
+        - earthkit.meteo.wind
+        - earthkit.meteo.thermo
+        - earthkit.meteo.constants
       pip_check: true
       python_version:
         - ${{ python_min }}.*
